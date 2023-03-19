@@ -1,7 +1,6 @@
 package services
 
 import (
-	"fmt"
 	"os"
 
 	"go-rest-api/models/config"
@@ -9,7 +8,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-func LoadConfig() {
+func LoadConfig() config.Config {
 	configFile, err := os.Open("application.yaml")
 	if err != nil {
 		panic(err)
@@ -21,6 +20,5 @@ func LoadConfig() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("hey")
-	fmt.Println(config.App.Port)
+	return config
 }
