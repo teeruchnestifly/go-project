@@ -15,4 +15,6 @@ func main() {
 	r.GET("/users", services.ListALLUser)
 
 	r.Run()
+
+	services.LoadConfig()
 }
