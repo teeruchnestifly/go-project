@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  gorestapi:
+    image: gorestapi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    network_mode: host
+    ports:
+      - 8080:8080
