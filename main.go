@@ -7,6 +7,8 @@ import (
 )
 
 func main() {
+
+	services.GetJson()
 	r := gin.New()
 
 	r.GET("/books", services.ListBooksHandler)
