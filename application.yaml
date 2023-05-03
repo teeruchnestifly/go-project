@@ -1,7 +1,7 @@
 # Application settings
 app:
   port: 8080
-
+  env: LOCAL
 # Database settings
 database:
   driver: mysql
@@ -10,3 +10,10 @@ database:
   user: root
   password: password
   dbname: nestifly
+  uat:
+    driver: mysql
+    host: /cloudsql/dev-nestifly:asia-southeast1:blackbirdsql-dev
+    port: 3306
+    user: root
+    password: password
+    dbname: blackbirddb_p

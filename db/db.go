@@ -36,15 +36,18 @@ func Connect() {
 	}
 
 	// Connect to database using GORM
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
-		config.Database.User,
-		config.Database.Password,
-		config.Database.Host,
-		config.Database.Port,
-		config.Database.DBName,
-	)
+	// dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+	// 	config.Database.User,
+	// 	config.Database.Password,
+	// 	config.Database.Host,
+	// 	config.Database.Port,
+	// 	config.Database.DBName,
+	// )
 
 	// Set up database connection
+	// dsn := "root:password@tcp(localhost:3306)/nestifly?charset=utf8mb4&parseTime=True&loc=Local"
+
+	dsn := "root@cloudsql(dev-nestifly:asia-southeast1:blackbirdsql-dev)/blackbirddb_p?charset=utf8&parseTime=True&loc=UTC"
 	// dsn := "root:password@tcp(localhost:3306)/nestifly?charset=utf8mb4&parseTime=True&loc=Local"
 	var err2 error
 	DB, err2 = gorm.Open(mysql.Open(dsn), &gorm.Config{})

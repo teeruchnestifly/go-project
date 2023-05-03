@@ -1,11 +1,13 @@
 # Use an official Golang runtime as a parent image
 FROM golang:1.17
 
-# Set the working directory to /app
-WORKDIR /go-rest-api
+RUN mkdir /app
 
 # Copy the current directory contents into the container at /app
-COPY . /go-rest-api
+COPY . /app
+
+# Set the working directory to /app
+WORKDIR /app
 
 # Download any missing dependencies
 RUN go mod download
