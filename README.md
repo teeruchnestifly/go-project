@@ -1,6 +1,9 @@
 #Initial project
 go get
 go mod tidy
+go run main.go
+
+test--> open http://localhost:8080/books
 
 
 #Run test project
